@@ -1,2 +1,3 @@
-# ans-python-workshop
-ANS Python Workshop
+# Checkpoint scripts for lesson
+
+Various files for different checkpoints throughout lesson.
