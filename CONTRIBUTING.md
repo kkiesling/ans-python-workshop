@@ -1,22 +1,5 @@
 # Contributing
 
-[Software Carpentry][swc-site] and [Data Carpentry][dc-site] are open source projects,
-and we welcome contributions of all kinds:
-new lessons,
-fixes to existing material,
-bug reports,
-and reviews of proposed changes are all welcome.
-
-## Contributor Agreement
-
-By contributing,
-you agree that we may redistribute your work under [our license](LICENSE.md).
-In exchange,
-we will address your issues and/or assess your change proposal as promptly as we can,
-and help you become a member of our community.
-Everyone involved in [Software Carpentry][swc-site] and [Data Carpentry][dc-site]
-agrees to abide by our [code of conduct](CONDUCT.md).
-
 ## How to Contribute
 
 The easiest way to get started is to file an issue
@@ -44,25 +27,9 @@ and to meet some of our community members.
     Instructions for doing this are [included below](#using-github).
 
 ## Where to Contribute
-
-1.  If you wish to change this lesson,
-    please work in <https://github.com/swcarpentry/matlab-novice-inflammation>,
-    which can be viewed at <https://swcarpentry.github.io/matlab-novice-inflammation>.
-
-2.  If you wish to change the example lesson,
-    please work in <https://github.com/swcarpentry/lesson-example>,
-    which documents the format of our lessons
-    and can be viewed at <https://swcarpentry.github.io/lesson-example>.
-
-3.  If you wish to change the template used for workshop websites,
-    please work in <https://github.com/swcarpentry/workshop-template>.
-    The home page of that repository explains how to set up workshop websites,
-    while the extra pages in <https://swcarpentry.github.io/workshop-template>
-    provide more background on our design choices.
-
-4.  If you wish to change CSS style files, tools,
-    or HTML boilerplate for lessons or workshops stored in `_includes` or `_layouts`,
-    please work in <https://github.com/swcarpentry/styles>.
+  -  If you wish to change this lesson, please work in
+    <https://github.com/kkiesling/ans-python-workshop>, which can be viewed at
+    <https://kkiesling.github.io/ans-python-workshop>.
 
 ## What to Contribute
 
@@ -71,10 +38,6 @@ from writing new exercises and improving existing ones
 to updating or filling in the documentation
 and and submitting [bug reports][issues]
 about things that don't work, aren't clear, or are missing.
-If you are looking for ideas,
-please see [the list of issues for this repository][issues],
-or the issues for [Data Carpentry][dc-issues]
-and [Software Carpentry][swc-issues] projects.
 
 Comments on issues and reviews of pull requests are just as welcome:
 we are smarter together than we are on our own.
@@ -128,25 +91,11 @@ or encourage others to do so.
 The maintainers are community volunteers,
 and have final say over what gets merged into the lesson.
 
-## Other Resources
 
-General discussion of [Software Carpentry][swc-site] and [Data Carpentry][dc-site]
-happens on the [discussion mailing list][discuss-list],
-which everyone is welcome to join.
-You can also [reach us by email][contact].
-
-[contact]: mailto:admin@software-carpentry.org
-[dc-issues]: https://github.com/issues?q=user%3Adatacarpentry
-[dc-lessons]: http://datacarpentry.org/lessons/
-[dc-site]: http://datacarpentry.org/
-[discuss-list]: http://lists.software-carpentry.org/listinfo/discuss
-[example-site]: https://swcarpentry.github.io/lesson-example/
+[contact]: mailto:shriwise@wisc.edu
 [github]: http://github.com
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join
 [how-contribute]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
-[issues]: https://github.com/swcarpentry/matlab-novice-inflammation/issues/
-[repo]: https://github.com/swcarpentry/matlab-novice-inflammation/
-[swc-issues]: https://github.com/issues?q=user%3Aswcarpentry
-[swc-lessons]: http://software-carpentry.org/lessons/
-[swc-site]: http://software-carpentry.org/
+[issues]: https://github.com/kkiesling/ans-python-workshop/issues/
+[repo]: https://github.com/kkiesling/ans-python-workshop/

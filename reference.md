@@ -41,7 +41,7 @@ case-sensitive
 comment
 :   A remark in a program that is intended to help human readers understand what is going on,
     but is ignored by the computer.
-    Comments in MATLAB start with a `%` character and run to the end of the line;
+    Comments in Python start with a `#` character and run to the end of the line;
 
 compose
 :   To apply one function to the result of another, such as `f(g(x))`.
