@@ -1,6 +1,6 @@
 ---
 title: "Running and Quitting"
-teaching: 15
+teaching:  5
 exercises: 0
 questions:
 - "How can I run Python programs?"
@@ -75,6 +75,9 @@ Out [1]: 9
 
 Here the `Out` is indicating that this is the output from the code we executed
 in command `[1]`.
+
+For the remainder of the workshop, these lessons won't include the input/output
+portions shown here but rather just the commands and resulting output.
 
 [anaconda]: https://docs.continuum.io/anaconda/install
 [jupyter]: http://jupyter.org/
