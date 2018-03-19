@@ -1,6 +1,6 @@
 ---
 title: Data Structures
-teaching: 10
+teaching: 15
 exercises: 0
 questions:
 - "How can I store many values together?"

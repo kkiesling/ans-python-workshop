@@ -1,7 +1,7 @@
 ---
 title: "For Loops"
 teaching: 10
-exercises: 15
+exercises: 0
 questions:
 - "How can I make a program do many things?"
 objectives:
@@ -198,7 +198,7 @@ print(total)
 > ~~~
 > {: .python}
 > > ## Solution
-> > 
+> >
 > > | Line no | Variables            |
 > > |---------|----------------------|
 > > | 1       | total = 0            |
@@ -349,7 +349,7 @@ print(total)
 >    *without* running it.
 > 2. Run the code and read the error message.
 >    What type of `NameError` do you think this is?
->    Is it a string with no quotes, a misspelled variable, or a 
+>    Is it a string with no quotes, a misspelled variable, or a
 >    variable that should have been defined but was not?
 > 3. Fix the error.
 > 4. Repeat steps 2 and 3, until you have fixed all the errors.

@@ -1,6 +1,6 @@
 ---
 title: Creating Functions
-teaching: 30
+teaching: 10
 exercises: 0
 questions:
 - "How can I define new functions?"

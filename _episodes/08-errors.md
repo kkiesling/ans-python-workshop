@@ -1,6 +1,6 @@
 ---
 title: Errors and Exceptions
-teaching: 30
+teaching: 5
 exercises: 0
 questions:
 - "How does Python report errors?"
