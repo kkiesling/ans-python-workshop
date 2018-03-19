@@ -1,7 +1,7 @@
 ---
 title: "Data Types and Type Conversion"
 teaching: 10
-exercises: 10
+exercises: 0
 questions:
 - "What kinds of data do programs store?"
 - "How can I convert one type to another?"
@@ -35,21 +35,21 @@ keypoints:
     *   But remember: the *value* has the type --- the *variable* is just a label.
 
 ~~~
-print(type(52))
+type(52)
 ~~~
 {: .python}
 ~~~
-<class 'int'>
+int
 ~~~
 {: .output}
 
 ~~~
 fitness = 'average'
-print(type(fitness))
+type(fitness)
 ~~~
 {: .python}
 ~~~
-<class 'str'>
+str
 ~~~
 {: .output}
 
@@ -58,7 +58,7 @@ print(type(fitness))
 *   A value's type determines what the program can do to it.
 
 ~~~
-print(5 - 3)
+5 - 3
 ~~~
 {: .python}
 ~~~
@@ -67,14 +67,14 @@ print(5 - 3)
 {: .output}
 
 ~~~
-print('hello' - 'h')
+'hello' - 'h'
 ~~~
 {: .python}
 ~~~
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-2-67f5626a1e07> in <module>()
-----> 1 print('hello' - 'h')
+----> 1 'hello' - 'h'
 
 TypeError: unsupported operand type(s) for -: 'str' and 'str'
 ~~~
@@ -99,7 +99,7 @@ Ahmed Walsh
 
 ~~~
 separator = '=' * 10
-print(separator)
+separator
 ~~~
 {: .python}
 ~~~
@@ -112,7 +112,7 @@ print(separator)
 *   The built-in function `len` counts the number of characters in a string.
 
 ~~~
-print(len(full_name))
+len(full_name)
 ~~~
 {: .python}
 ~~~
@@ -123,14 +123,14 @@ print(len(full_name))
 *   But numbers don't have a length (not even zero).
 
 ~~~
-print(len(52))
+len(52)
 ~~~
 {: .python}
 ~~~
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-3-f769e8e8097d> in <module>()
-----> 1 print(len(52))
+----> 1 len(52)
 
 TypeError: object of type 'int' has no len()
 ~~~
@@ -141,14 +141,14 @@ TypeError: object of type 'int' has no len()
 *   Cannot add numbers and strings.
 
 ~~~
-print(1 + '2')
+1 + '2'
 ~~~
 {: .python}
 ~~~
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-4-fe4f54a023c6> in <module>()
-----> 1 print(1 + '2')
+----> 1 1 + '2'
 
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ~~~
@@ -158,13 +158,13 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 *   Some types can be converted to other types by using the type name as a function.
 
 ~~~
-print(1 + int('2'))
-print(str(1) + '2')
+1 + int('2')
+str(1) + '2'
 ~~~
 {: .python}
 ~~~
 3
-12
+'12'
 ~~~
 {: .output}
 
