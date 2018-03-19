@@ -1,7 +1,7 @@
 ---
 title: "Variables and Assignment"
 teaching: 10
-exercises: 10
+exercises: 0
 questions:
 - "How can I store data in programs?"
 objectives:
@@ -29,6 +29,7 @@ keypoints:
 
 ~~~
 age = 42
+eye_color = 'green'
 first_name = 'Ahmed'
 ~~~
 {: .python}
@@ -48,13 +49,32 @@ first_name = 'Ahmed'
 *   The values passed to the function are called 'arguments'
 
 ~~~
-print(first_name, 'is', age, 'years old')
+print(first_name)
 ~~~
 {: .python}
 ~~~
-Ahmed is 42 years old
+Ahmed
+~~~
+{:.output}
+
+Python's `print` function can also display multiple items at once.
+
+~~~
+print(first_name, 'is', age, 'years old')
+print first_name, 'has', eye_color, 'eyes'
+~~~
+{: .python}
+~~~
+('Ahmed', 'is', 42, 'years old')
+Ahmed has green eyes
 ~~~
 {: .output}
+
+Note in the first case without parenthesis we get a different output format than
+in the second case. This is just a difference in the way that our version of
+iPython prints information. Both are ok, but the first version (with
+parenthesis) will work on any version of Python, so we'll continue to teach that
+throughout the workshop today.
 
 *   `print` automatically puts a single space between items to separate them.
 *   And wraps around to a new line at the end.
