@@ -1,377 +1,401 @@
 ---
-title: Repeating Actions with Loops
-teaching: 30
-exercises: 0
+title: "For Loops"
+teaching: 10
+exercises: 15
 questions:
-- "How can I do the same operations on many different values?"
+- "How can I make a program do many things?"
 objectives:
-- "Explain what a `for` loop does."
-- "Correctly write `for` loops to repeat simple calculations."
-- "Trace changes to a loop variable as the loop runs."
-- "Trace changes to other variables as they are updated by a `for` loop."
+- "Explain what for loops are normally used for."
+- "Trace the execution of a simple (unnested) loop and correctly state the values of variables in each iteration."
+- "Write for loops that use the Accumulator pattern to aggregate values."
 keypoints:
-- "Use `for variable in sequence` to process the elements of a sequence one at a time."
-- "The body of a `for` loop must be indented."
-- "Use `len(thing)` to determine the length of something that contains other values."
+- "A *for loop* executes commands once for each value in a collection."
+- "The first line of the `for` loop must end with a colon, and the body must be indented."
+- "Indentation is always meaningful in Python."
+- "A `for` loop is made up of a collection, a loop variable, and a body."
+- "Loop variables can be called anything (but it is strongly advised to have a meaningful name to the looping variable)."
+- "The body of a loop can contain many statements."
+- "Use `range` to iterate over a sequence of numbers."
+- "The Accumulator pattern turns many values into one."
 ---
+## A *for loop* executes commands once for each value in a collection.
 
-In the last lesson,
-we wrote some code that plots some values of interest from our first inflammation dataset,
-and reveals some suspicious features in it, such as from `inflammation-01.csv`
-
-![Analysis of inflammation-01.csv](../fig/03-loop_2_0.png)
-
-We have a dozen data sets right now, though, and more on the way.
-We want to create plots for all of our data sets with a single statement.
-To do that, we'll have to teach the computer how to repeat things.
-
-An example task that we might want to repeat is printing each character in a
-word on a line of its own.
+*   Doing calculations on the values in a list one by one
+    is as painful as working with `pressure_001`, `pressure_002`, etc.
+*   A *for loop* tells Python to execute some statements once for each value in a list,
+    a character string,
+    or some other collection.
+*   "for each thing in this group, do these operations"
 
 ~~~
-word = 'lead'
+for number in [2, 3, 5]:
+    print(number)
 ~~~
-{: .language-python}
+{: .python}
 
-We can access a character in a string using its index. For example, we can get the first
-character of the word `'lead'`, by using `word[0]`. One way to print each character is to use
-four `print` statements:
-
-~~~
-print(word[0])
-print(word[1])
-print(word[2])
-print(word[3])
-~~~
-{: .language-python}
+*   This `for` loop is equivalent to:
 
 ~~~
-l
-e
-a
-d
+print(2)
+print(3)
+print(5)
 ~~~
-{: .output}
+{: .python}
 
-This is a bad approach for two reasons:
-
-1.  It doesn't scale:
-    if we want to print the characters in a string that's hundreds of letters long,
-    we'd be better off just typing them in.
-
-1.  It's fragile:
-    if we give it a longer string,
-    it only prints part of the data,
-    and if we give it a shorter one,
-    it produces an error because we're asking for characters that don't exist.
+*   And the `for` loop's output is:
 
 ~~~
-word = 'tin'
-print(word[0])
-print(word[1])
-print(word[2])
-print(word[3])
-
-~~~
-{: .language-python}
-
-~~~
-t
-i
-n
-~~~
-{: .output}
-
-~~~
----------------------------------------------------------------------------
-IndexError                                Traceback (most recent call last)
-<ipython-input-3-7974b6cdaf14> in <module>()
-      3 print(word[1])
-      4 print(word[2])
-----> 5 print(word[3])
-
-IndexError: string index out of range
-~~~
-{: .error}
-
-Here's a better approach:
-
-~~~
-word = 'lead'
-for char in word:
-    print(char)
-
-~~~
-{: .language-python}
-
-~~~
-l
-e
-a
-d
-~~~
-{: .output}
-
-This is shorter --- certainly shorter than something that prints every character in a hundred-letter string --- and
-more robust as well:
-
-~~~
-word = 'oxygen'
-for char in word:
-    print(char)
-~~~
-{: .language-python}
-
-~~~
-o
-x
-y
-g
-e
-n
-~~~
-{: .output}
-
-The improved version uses a [for loop]({{ page.root }}/reference/#for-loop)
-to repeat an operation --- in this case, printing --- once for each thing in a sequence.
-The general form of a loop is:
-
-~~~
-for variable in collection:
-    do things with variable
-~~~
-
-Using the oxygen example above, the loop might look like this:
-
-![loop_image](../fig/loops_image.png)
-
-where each character (`char`) in the variable `word` is looped through and printed one character after another.
-The numbers in the diagram denote which loop cycle the character was printed in (1 being the first loop, and 6 being the final loop).
-
-We can call the [loop variable]({{ page.root }}/reference/#loop-variable) anything we like,
-but there must be a colon at the end of the line starting the loop,
-and we must indent anything we want to run inside the loop. Unlike many other languages, there is no
-command to signify the end of the loop body (e.g. `end for`); what is indented after the `for` statement belongs to the loop.
-
-
-> ## What's in a name?
->
->
-> In the example above, the loop variable was given the name `char` as a mnemonic; it is short for 'character'. 
-> We can choose any name we want for variables. We might just as easily have chosen the name `banana` for the loop variable, as long as we use the same name when we invoke the variable inside the loop:
->
-> ~~~
-> word = 'oxygen'
-> for banana in word:
->     print(banana)
-> ~~~
-> {: .language-python}
->
-> ~~~
-> o
-> x
-> y
-> g
-> e
-> n
-> ~~~
-> {: .output}
->
-> It is a good idea to choose variable names that are meaningful, otherwise it would be more difficult to understand what the loop is doing.
-{: .callout}
-
-Here's another loop that repeatedly updates a variable:
-
-~~~
-length = 0
-for vowel in 'aeiou':
-    length = length + 1
-print('There are', length, 'vowels')
-~~~
-{: .language-python}
-
-~~~
-There are 5 vowels
-~~~
-{: .output}
-
-It's worth tracing the execution of this little program step by step.
-Since there are five characters in `'aeiou'`,
-the statement on line 3 will be executed five times.
-The first time around,
-`length` is zero (the value assigned to it on line 1)
-and `vowel` is `'a'`.
-The statement adds 1 to the old value of `length`,
-producing 1,
-and updates `length` to refer to that new value.
-The next time around,
-`vowel` is `'e'` and `length` is 1,
-so `length` is updated to be 2.
-After three more updates,
-`length` is 5;
-since there is nothing left in `'aeiou'` for Python to process,
-the loop finishes
-and the `print` statement on line 4 tells us our final answer.
-
-Note that a loop variable is just a variable that's being used to record progress in a loop.
-It still exists after the loop is over,
-and we can re-use variables previously defined as loop variables as well:
-
-~~~
-letter = 'z'
-for letter in 'abc':
-    print(letter)
-print('after the loop, letter is', letter)
-~~~
-{: .language-python}
-
-~~~
-a
-b
-c
-after the loop, letter is c
-~~~
-{: .output}
-
-Note also that finding the length of a string is such a common operation
-that Python actually has a built-in function to do it called `len`:
-
-~~~
-print(len('aeiou'))
-~~~
-{: .language-python}
-
-~~~
+2
+3
 5
 ~~~
 {: .output}
 
-`len` is much faster than any function we could write ourselves,
-and much easier to read than a two-line loop;
-it will also give us the length of many other things that we haven't met yet,
-so we should always use it when we can.
+## The first line of the `for` loop must end with a colon, and the body must be indented.
 
-> ## From 1 to N
+*   The colon at the end of the first line signals the start of a *block* of statements.
+*   Python uses indentation rather than `{}` or `begin`/`end` to show *nesting*.
+    *   Any consistent indentation is legal, but almost everyone uses four spaces.
+
+~~~
+for number in [2, 3, 5]:
+print(number)
+~~~
+{: .python}
+~~~
+IndentationError: expected an indented block
+~~~
+{: .error}
+
+*   Indentation is always meaningful in Python.
+
+~~~
+firstName="Jon"
+  lastName="Smith"
+~~~
+{: .python}
+~~~
+  File "<ipython-input-7-f65f2962bf9c>", line 2
+    lastName="Smith"
+    ^
+IndentationError: unexpected indent
+~~~
+{: .error}
+
+*   This error can be fixed by removing the extra spaces
+    at the beginning of the second line.
+
+## A `for` loop is made up of a collection, a loop variable, and a body.
+
+~~~
+for number in [2, 3, 5]:
+    print(number)
+~~~
+{: .python}
+
+*   The collection, `[2, 3, 5]`, is what the loop is being run on.
+*   The body, `print(number)`, specifies what to do for each value in the collection.
+*   The loop variable, `number`, is what changes for each *iteration* of the loop.
+    *   The "current thing".
+
+## Loop variables can be called anything.
+
+*   As with all variables, loop variables are:
+    *   Created on demand.
+    *   Meaningless: their names can be anything at all.
+
+~~~
+for kitten in [2, 3, 5]:
+    print(kitten)
+~~~
+{: .python}
+
+## The body of a loop can contain many statements.
+
+*   But no loop should be more than a few lines long.
+*   Hard for human beings to keep larger chunks of code in mind.
+
+~~~
+primes = [2, 3, 5]
+for p in primes:
+    squared = p ** 2
+    cubed = p ** 3
+    print(p, squared, cubed)
+~~~
+{: .python}
+~~~
+2 4 8
+3 9 27
+5 25 125
+~~~
+{: .output}
+
+## Use `range` to iterate over a sequence of numbers.
+
+*   The built-in function `range` produces a sequence of numbers.
+    *   *Not* a list: the numbers are produced on demand
+        to make looping over large ranges more efficient.
+*   `range(N)` is the numbers 0..N-1
+    *   Exactly the legal indices of a list or character string of length N
+
+~~~
+print('a range is not a list: range(0, 3)')
+for number in range(0,3):
+    print(number)
+~~~
+{: .python}
+~~~
+a range is not a list: range(0, 3)
+0
+1
+2
+~~~
+{: .output}
+
+## The Accumulator pattern turns many values into one.
+
+*   A common pattern in programs is to:
+    1.  Initialize an *accumulator* variable to zero, the empty string, or the empty list.
+    2.  Update the variable with values from a collection.
+
+~~~
+# Sum the first 10 integers.
+total = 0
+for number in range(10):
+   total = total + (number + 1)
+print(total)
+~~~
+{: .python}
+~~~
+55
+~~~
+{: .output}
+
+*   Read `total = total + (number + 1)` as:
+    *   Add 1 to the current value of the loop variable `number`.
+    *   Add that to the current value of the accumulator variable `total`.
+    *   Assign that to `total`, replacing the current value.
+*   We have to add `number + 1` because `range` produces 0..9, not 1..10.
+
+> ## Classifying Errors
 >
-> Python has a built-in function called `range` that creates a sequence of numbers. `range` can
-> accept 1, 2, or 3 parameters.
->
-> * If one parameter is given, `range` creates an array of that length,
->   starting at zero and incrementing by 1.
->   For example, `range(3)` produces the numbers `0, 1, 2`.
-> * If two parameters are given, `range` starts at
->   the first and ends just before the second, incrementing by one.
->   For example, `range(2, 5)` produces `2, 3, 4`.
-> * If `range` is given 3 parameters,
->   it starts at the first one, ends just before the second one, and increments by the third one.
->   For exmaple `range(3, 10, 2)` produces `3, 5, 7, 9`.
->
-> Using `range`,
-> write a loop that uses `range` to print the first 3 natural numbers:
->
-> ~~~
-> 1
-> 2
-> 3
-> ~~~
-> {: .language-python}
->
+> Is an indentation error a syntax error or a runtime error?
 > > ## Solution
-> > ~~~
-> > for i in range(1, 4):
-> >    print(i)
-> > ~~~
-> > {: .language-python}
+> > An IndentationError is a syntax error. Programs with syntax errors cannot be started.
+> > A program with a runtime error will start but an error will be thrown under certain conditions.
 > {: .solution}
 {: .challenge}
 
-> ## Computing Powers With Loops
+> ## Tracing Execution
 >
-> Exponentiation is built into Python:
->
-> ~~~
-> print(5 ** 3)
-> ~~~
-> {: .language-python}
+> Create a table showing the numbers of the lines that are executed when this program runs,
+> and the values of the variables after each line is executed.
 >
 > ~~~
-> 125
+> total = 0
+> for char in "tin":
+>     total = total + 1
 > ~~~
-> {: .output}
+> {: .python}
+> > ## Solution
+> > 
+> > | Line no | Variables            |
+> > |---------|----------------------|
+> > | 1       | total = 0            |
+> > | 2       | total = 0 char = 't' |
+> > | 3       | total = 1 char = 't' |
+> > | 2       | total = 1 char = 'i' |
+> > | 3       | total = 2 char = 'i' |
+> > | 2       | total = 2 char = 'n' |
+> > | 3       | total = 3 char = 'n' |
+> {: .solution}
+{: .challenge}
+
+> ## Reversing a String
 >
-> Write a loop that calculates the same result as `5 ** 3` using
-> multiplication (and without exponentiation).
+> Fill in the blanks in the program below so that it prints "nit"
+> (the reverse of the original character string "tin").
 >
+> ~~~
+> original = "tin"
+> result = ____
+> for char in original:
+>     result = ____
+> print(result)
+> ~~~
+> {: .python}
 > > ## Solution
 > > ~~~
-> > result = 1
-> > for i in range(0, 3):
-> >    result = result * 5
+> > original = "tin"
+> > result = ""
+> > for char in original:
+> >     result = char + result
 > > print(result)
 > > ~~~
-> > {: .language-python}
+> > {: .python}
 > {: .solution}
 {: .challenge}
 
-> ## Reverse a String
+> ## Practice Accumulating
 >
-> Knowing that two strings can be concatenated using the `+` operator,
-> write a loop that takes a string
-> and produces a new string with the characters in reverse order,
-> so `'Newton'` becomes `'notweN'`.
+> Fill in the blanks in each of the programs below
+> to produce the indicated result.
 >
+> ~~~
+> # Total length of the strings in the list: ["red", "green", "blue"] => 12
+> total = 0
+> for word in ["red", "green", "blue"]:
+>     ____ = ____ + len(word)
+> print(total)
+> ~~~
+> {: .python}
 > > ## Solution
 > > ~~~
-> > newstring = ''
-> > oldstring = 'Newton'
-> > for char in oldstring:
-> >    newstring = char + newstring
-> > print(newstring)
+> > total = 0
+> > for word in ["red", "green", "blue"]:
+> >     total = total + len(word)
+> > print(total)
 > > ~~~
-> > {: .language-python}
+> > {: .python}
+> {: .solution}
+>
+> ~~~
+> # List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
+> lengths = ____
+> for word in ["red", "green", "blue"]:
+>     lengths.____(____)
+> print(lengths)
+> ~~~
+> {: .python}
+> > ## Solution
+> > ~~~
+> > lengths = []
+> > for word in ["red", "green", "blue"]:
+> >     lengths.append(len(word))
+> > print(lengths)
+> > ~~~
+> > {: .python}
+> {: .solution}
+>
+> ~~~
+> # Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
+> words = ["red", "green", "blue"]
+> result = ____
+> for ____ in ____:
+>     ____
+> print(result)
+> ~~~
+> {: .python}
+> > ## Solution
+> > ~~~
+> > words = ["red", "green", "blue"]
+> > result = ""
+> > for word in words:
+> >     result = result + word
+> > print(result)
+> > ~~~
+> > {: .python}
+> {: .solution}
+>
+> ~~~
+> # Create acronym: ["red", "green", "blue"] => "RGB"
+> # write the whole thing
+> ~~~
+> {: .python}
+> > ## Solution
+> > ~~~
+> > acronym = ""
+> > for word in ["red", "green", "blue"]:
+> >     acronym = acronym + word[0].upper()
+> > print(acronym)
+> > ~~~
+> > {: .python}
 > {: .solution}
 {: .challenge}
 
-> ## Computing the Value of a Polynomial
+> ## Cumulative Sum
 >
-> The built-in function `enumerate` takes a sequence (e.g. a list) and generates a
-> new sequence of the same length. Each element of the new sequence is a pair composed of the index
-> (0, 1, 2,...) and the value from the original sequence:
->
-> ~~~
-> for i, x in enumerate(xs):
->     # Do something with i and x
-> ~~~
-> {: .language-python}
->
-> The code above loops through `xs`, assigning the index to `i` and the value to `x`.
->
-> Suppose you have encoded a polynomial as a list of coefficients in
-> the following way: the first element is the constant term, the
-> second element is the coefficient of the linear term, the third is the
-> coefficient of the quadratic term, etc.
+> Reorder and properly indent the lines of code below
+> so that they print an array with the cumulative sum of data.
+> The result should be `[1, 3, 5, 10]`.
 >
 > ~~~
-> x = 5
-> cc = [2, 4, 3]
+> cumulative += [sum]
+> for number in data:
+> cumulative = []
+> sum += number
+> sum = 0
+> print(cumulative)
+> data = [1,2,2,5]
 > ~~~
-> {: .language-python}
->
-> ~~~
-> y = cc[0] * x**0 + cc[1] * x**1 + cc[2] * x**2
-> y = 97
-> ~~~
-> {: .output}
->
-> Write a loop using `enumerate(cc)` which computes the value `y` of any
-> polynomial, given `x` and `cc`.
->
+> {: .python}
 > > ## Solution
 > > ~~~
-> > y = 0
-> > for i, c in enumerate(cc):
-> >     y = y + x**i * c
+> > sum = 0
+> > data = [1,2,2,5]
+> > cumulative = []
+> > for number in data:
+> >     sum += number
+> >     cumulative.append(sum)
+> > print(cumulative)
 > > ~~~
-> > {: .language-python}
+> > {: .python}
+> {: .solution}
+{: .challenge}
+
+> ## Identifying Variable Name Errors
+>
+> 1. Read the code below and try to identify what the errors are
+>    *without* running it.
+> 2. Run the code and read the error message.
+>    What type of `NameError` do you think this is?
+>    Is it a string with no quotes, a misspelled variable, or a 
+>    variable that should have been defined but was not?
+> 3. Fix the error.
+> 4. Repeat steps 2 and 3, until you have fixed all the errors.
+>
+> ~~~
+> for number in range(10):
+>     # use a if the number is a multiple of 3, otherwise use b
+>     if (Number % 3) == 0:
+>         message = message + a
+>     else:
+>         message = message + "b"
+> print(message)
+> ~~~
+> {: .python}
+> > ## Solution
+> > ~~~
+> > message = ""
+> > for number in range(10):
+> >     # use a if the number is a multiple of 3, otherwise use b
+> >     if (number % 3) == 0:
+> >         message = message + "a"
+> >     else:
+> >         message = message + "b"
+> > print(message)
+> > ~~~
+> > {: .python}
+> {: .solution}
+{: .challenge}
+
+> ## Identifying Item Errors
+>
+> 1. Read the code below and try to identify what the errors are
+>    *without* running it.
+> 2. Run the code, and read the error message. What type of error is it?
+> 3. Fix the error.
+>
+> ~~~
+> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+> print('My favorite season is ', seasons[4])
+> ~~~
+> {: .python}
+> > ## Solution
+> > ~~~
+> > seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+> > print('My favorite season is ', seasons[3])
+> > ~~~
+> > {: .python}
 > {: .solution}
 {: .challenge}
