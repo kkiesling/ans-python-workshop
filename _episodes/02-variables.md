@@ -72,12 +72,20 @@ Ahmed has green eyes
 
 Note in the first case without parenthesis we get a different output format than
 in the second case. This is just a difference in the way that our version of
-iPython prints information. Both are ok, but the first version (with
+iPython prints information. Both are OK, but the first version (with
 parenthesis) will work on any version of Python, so we'll continue to teach that
-throughout the workshop today.
+throughout the workshop today. Also note that each `print` command starts a new
+line in the output displayed.
 
-*   `print` automatically puts a single space between items to separate them.
-*   And wraps around to a new line at the end.
+> ## Extra information on the print command in Python
+> In Python 2.7 (which is what we're using today), `print` without items in
+> parenthesis automatically puts a single space between items to separate
+> them. When using parenthesis, the items are printed as-is. Python3 has its [own
+> rules][python3-print-rules] for displaying information using `print`. Using parenthesis
+> to enclose items is valid in both versions of Python, which is why we are teaching the
+> `print` command this way.
+{: .callout}
+
 
 ## Variables must be created before they are used.
 
@@ -324,3 +332,5 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 > 4.  What does `thing[:]` (just a colon) do?
 > 5.  What does `thing[number:negative-number]` do?
 {: .challenge}
+
+[python3-print-rules]: https://www.python-course.eu/python3_print.php
