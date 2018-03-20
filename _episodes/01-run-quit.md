@@ -22,10 +22,6 @@ keypoints:
 
 ## Start iPython
 
-*   The [Anaconda package manager][anaconda] is an automated way to install the iPython on your own machine.
-    *   See [the setup instructions]({{ page.root }}/setup/) for Anaconda installation instructions.
-*   It also installs all the extra libraries it needs to run.
-*   Once you have installed Python and the iPython requirements, open a shell and type:
 
     ~~~
     $ ipython 
@@ -78,6 +74,15 @@ in command `[1]`.
 
 For the remainder of the workshop, these lessons won't include the input/output
 portions shown here but rather just the commands and resulting output.
+
+
+> ## Installing iPython on your own machine
+> *   The [Anaconda package manager][anaconda] is an automated way to install the iPython on your own machine.
+>     *   See [the setup instructions]({{ page.root }}/setup/) for Anaconda installation instructions.
+> *   It also installs all the extra libraries it needs to run.
+> *   Once you have installed Python and the iPython requirements, open a shell and type:
+{: .callout}
+
 
 [anaconda]: https://docs.continuum.io/anaconda/install
 [jupyter]: http://jupyter.org/
