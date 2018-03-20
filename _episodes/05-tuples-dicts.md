@@ -1,7 +1,7 @@
 ---
 title: "Tuples & Dictionaries"
 teaching: 10
-exercises: 5
+exercises: 0
 questions:
 - "How can I add semantic value to my collections of multiple values?"
 objectives:
