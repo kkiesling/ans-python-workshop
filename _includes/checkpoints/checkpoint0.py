@@ -12,7 +12,7 @@ import math as m
 # set values of initial flux (phi_0), attenuation coefficient (mu),
 # and shield thickness (x)
 phi_0 = 1.e15   # photon/cm**2-s
-mu = 0.125      # attenuation coefficient 1/cm
+mu = 0.5182     # attenuation coefficient 1/cm
 x = 5.0         # shield thickness in cm
 
 # calcuate phi

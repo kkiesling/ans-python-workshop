@@ -36,12 +36,12 @@ def calc_phi(phi_0, mat_props):
 
 
 # Lead shield
-lead_props = (.125, 5.0)
+lead_props = (0.5182, 5.0)
 phi_lead = calc_phi(1.e10, lead_props)
 print(phi_lead)
 
 
-# Plastic shield
-plastic_props = (.02, 15.0)
-phi_plastic = calc_phi(1.e15, plastic_props)
-print(phi_plastic)
+# Water shield
+water_props = (0.0493, 15.0)
+phi_water = calc_phi(1.e15, water_props)
+print(phi_water)

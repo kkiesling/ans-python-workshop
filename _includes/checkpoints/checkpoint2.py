@@ -29,10 +29,10 @@ def calc_phi(phi_0, mu, x):
 
 
 # Lead shield
-phi_lead = calc_phi(1.e10, 0.125, 5.0)
+phi_lead = calc_phi(1.e10, 0.5182, 5.0)
 print(phi_lead)
 
 
-# Plastic shield
-phi_plastic = calc_phi(1.e15, 0.02, 15.)
-print(phi_plastic)
+# Water shield
+phi_water = calc_phi(1.e15, 0.0493, 15.0)
+print(phi_water)

@@ -51,9 +51,9 @@ def calc_phi(phi_0, mat_props):
 
 # Set initial flux and material properties
 phi_0 = 1.e15
-lead_props = (.125, 5.0)
-plastic_props = (.02, 15.0)
-mat_props = [lead_props, plastic_props]
+lead_props = (0.5182, 5.0)
+water_props = (0.0493, 15.0)
+mat_props = [lead_props, water_props]
 
 phi_final = calc_phi(phi_0, mat_props)
 

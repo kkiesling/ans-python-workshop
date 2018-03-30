@@ -43,26 +43,26 @@ def calc_phi(phi, mat_props):
     return(phi)
 
 
-# Set properties for three different shielding types (lead, plastic, and
-# tungsten:
-lead_props = (.125, 5.0)
-plastic_props = (.02, 15.)
-tungsten_props = (.120, 7.)
+# Set properties for various shielding types:
+lead_props = (0.5182, 5.0)
+water_props = (0.0493, 15.0)
+tungsten_props = (0.0437, 7.0)
+aluminum_props = (0.1166, 10.0)
 
 # Set initial flux
 phi_0 = 1.e15
 
-# Calculate using three shields (lead, plastic, and tungsten)
-mat_props = [lead_props, plastic_props, tungsten_props]
+# Calculate using three shields (lead, water, and tungsten)
+mat_props = [lead_props, water_props, tungsten_props]
 phi_final = calc_phi(phi_0, mat_props)
 print(phi_final)
 
-# Calculate using two shields (lead and tungsten)
-mat_props = [lead_props, tungsten_props]
+# Calculate using two shields (water and tungsten)
+mat_props = [water_props, tungsten_props]
 phi_final = calc_phi(phi_0, mat_props)
 print(phi_final)
 
-# Calculate using one shield (lead)
-mat_props = [lead_props]
+# Calculate using one shield (aluminum)
+mat_props = [aluminum_props]
 phi_final = calc_phi(phi_0, mat_props)
 print(phi_final)
