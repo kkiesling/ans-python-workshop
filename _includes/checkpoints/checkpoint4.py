@@ -17,7 +17,7 @@ def calc_phi(phi_0, mat_props):
         phi_0: float, initial flux value (photons/cm**2-s)
         mat_props: list of tuples, each tuple represents a set of
             properties for each material in the problem in the form
-            [(mu0, x0), (mu0, x0)] where:
+            [(mu0, x0), (mu1, x1)] where:
                 mu0: float, attenuation coefficient for first shield
                     (1/cm)
                 x0: float, shield thickness for first shield (cm)
