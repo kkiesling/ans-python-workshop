@@ -1,4 +1,3 @@
-# need to import the "math" module to use different math functions
 import math as m
 
 # Lead shield 5 cm thick
@@ -10,7 +9,7 @@ phi_lead = phi_0 * m.exp(-mu*x)
 print(phi_lead)
 
 
-# plastic shield 15 cm thick
+# Compute plastic shield 15 cm thick
 phi = 1.e15
 mu = 0.02
 x = 15.
