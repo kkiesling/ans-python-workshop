@@ -29,10 +29,16 @@ def calc_phi(phi_0, mu, x):
 
 
 # Lead shield
-phi_lead = calc_phi(1.e10, 0.5182, 5.0)
+phi_0 = 1.e10   # photons/cm**2-s
+mu = 0.5182     # attenuation coefficient 1/cm
+x = 5.0         # shield thickness in cm
+phi_lead = calc_phi(phi_0, mu, x)
 print(phi_lead)
 
 
 # Water shield
-phi_water = calc_phi(1.e15, 0.0493, 15.0)
+phi_0 = 1.e15   # photons/cm**2-s
+mu = 0.0493     # attenuation coefficient 1/cm
+x = 15.0        # shield thickness in cm
+phi_water = calc_phi(phi_0, mu, x)
 print(phi_water)
