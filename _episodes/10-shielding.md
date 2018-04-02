@@ -37,6 +37,25 @@ the calculation for a shield with one material, lead, with a thickness of 15 cm.
 >
 {: .callout}
 
+The beginning of this script is a commented section of text describing what the
+script does. Because this code is encased in triple-quoted (`"""`) both above
+and below the text, Python will ignore this section and not treat it as code.
+
+Next Python's built-in `math` module is imported into the script. Similar to the
+built-in **functions** we discussed in [episode 2](/02-variables), Python comes
+with a set of standard modules which add commonly needed cababilities to your
+programs. In this case, we'll use the math module to access the exponential
+function (`math.exp`). Notice, though, that when this function is called in
+later lines it is called as `m.exp`. This is because we've imported the `math`
+module **as** `m`. This allows us to refer to the math module using only `m`,
+making it easier to reference when we need it later in the script.
+
+Next we initialize a few variables: `phi_0`, `mu`, and `x`. These represent the
+initial flux, attenuation coefficient of lead, and the lead shield thicknes
+respectiely. Finally, we perform the calculation for the uncollided flux
+according to the model above and display the result on screen.
+
+
 [checkpoint0]: https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint0.py
 [checkpoint1]: https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint1.py
 [checkpoint2]: https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint2.py
