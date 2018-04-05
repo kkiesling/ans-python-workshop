@@ -12,7 +12,7 @@ keypoints:
 
 In this lesson we'll be doing a live coding exercise in which we calculate the
 uncollided flux on the other side of a heterogeneous shield composed of lead,
-plastic, and tungsten. We'll be performing this calculation as a 1-D problem using
+water, and tungsten. We'll be performing this calculation as a 1-D problem using
 the following model:
 
 $$ \huge \Phi = \Phi_{o} e^{-\mu x} $$
@@ -54,6 +54,63 @@ Next we initialize a few variables: `phi_0`, `mu`, and `x`. These represent the
 initial flux, attenuation coefficient of lead, and the lead shield thicknes
 respectiely. Finally, we perform the calculation for the uncollided flux
 according to the model above and display the result on screen.
+
+## Two Shields
+
+Now let's update the script so that it reports the uncollided flux for another
+shield composed of water. Perhaps the most straightforward way to do this is to
+repeat our code, but update the attenuation and thickness values to represent a 
+water shield.
+
+~~~
+{% include checkpoints/checkpoint1.py %}
+~~~
+> ## Getting this script
+> To get the version of the script shown above, use [this link][checkpoint1]
+>
+{: .callout}
+
+This is fairly straightforward, but what if we want to perform this computation 
+10 times? 50 times? 10000 times? This small script would become large very quickly.
+A good way to provide the ability to repeat this calculation is to create a function for 
+calculating the flux given an attenuation coefficient and material thickness.
+
+## Creating a function
+
+In the code below, a function returning the flux for a shield (a $$\mu$$ and
+$$x$$ value) has been implemented *and documented*. Underneath the line defining
+the `calc_phi` function there is a set of text enclosed with triple-quotes
+(`"""`) which contains information about the purpose of the function along with
+its expected inputs and outputs. This form of documentation is accessible from a
+Python interpreter using the built-in `help` function. 
+
+Underneath this is the implementation of the function which computes the flux
+value. 
+
+~~~
+{% include checkpoints/checkpoint2.py %}
+~~~
+> ## Getting this script
+> To get the version of the script shown above, use [this link][checkpoint2]
+>
+{: .callout}
+
+## Correlating Shield Properties
+
+For the purposes of today's exercise, the two pieces of information required to
+define a shield are its attenuation coefficient, $$\mu$$, and its thickness,
+$$x$$. Rather than separate these values in to different variable, a tuple can
+be used to make sure these two properties will always be associated with each
+other. Our function for this calculation now needs to be updated as well. 
+
+~~~
+{% include checkpoints/checkpoint3.py %}
+~~~
+> ## Getting this script
+> To get the version of the script shown above, use [this link][checkpoint3]
+>
+{: .callout}
+
 
 
 [checkpoint0]: https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint0.py
