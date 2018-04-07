@@ -111,7 +111,56 @@ other. Our function for this calculation now needs to be updated as well.
 >
 {: .callout}
 
+As seen in the updated function documentation, the function `calc_phi` now takes
+in only two arguments - the initial flux `phi_0` and an argument named
+`mat_props`. Now when this argument is passed into the function we can unpack
+the attenuation coefficient and shield thickness from `mat_props` variable and
+perform our calculation. Note that if these lines were not being added in a
+function, they would be added in the main body of the script for each shield
+instead.
 
+## A Two-Material Shield
+
+Now that we have a function in place which returns the uncollided flux for a
+single shield. We can explore that calculation for a multi-layer shield in the
+code below. Because the material information is passed in as a list, it makes
+the extension of this function for attenuation through multiple materials fairly
+natural.  The calculation is performed for the first material and the resulting
+flux value is passed into a calculation for the second material. Finally the
+flux value is returned from the function and printed to screen in at the end of
+the script. Note that this multi-material calculation now requires only one call
+to the `calc_phi` function.
+
+~~~
+{% include checkpoints/checkpoint4.py %}
+~~~
+> ## Getting this script
+> To get the version of the script shown above, use [this link][checkpoint4]
+>
+{: .callout}
+
+## A Multi-Material Shield
+
+Our previous work made possible to calculate the flux after pasing through two
+materials, but what about 5 materials? 10 materials? 
+
+The design of the `calc_phi` function makes this possible with a relatively
+small change to the code. Rather than asuuming a specific number of materials
+are being passed into the function, we can use a for loop to calculate the flux
+after each material and return the final flux value at the end of the function.
+
+~~~
+{% include checkpoints/checkpoint5.py %}
+~~~
+> ## Getting this script
+> To get the version of the script shown above, use [this link][checkpoint5]
+>
+{: .callout}
+
+As demonstrated at the bottom of our code, this function can now be called to
+calculate the uncollided flux at the end of an arbitrary set of shields with
+varying thicknesses. It is also easy to set up different materials for the
+calculation and use them interchangably.
 
 [checkpoint0]: https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint0.py
 [checkpoint1]: https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint1.py
@@ -119,4 +168,3 @@ other. Our function for this calculation now needs to be updated as well.
 [checkpoint3]: https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint3.py
 [checkpoint4]: https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint4.py
 [checkpoint5]: https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint5.py
-
