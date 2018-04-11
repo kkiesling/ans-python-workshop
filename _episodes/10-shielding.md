@@ -89,7 +89,7 @@ according to the model above and display the result on screen.
 
 Now let's update the script so that it reports the uncollided flux for another
 shield composed of water. Perhaps the most straightforward way to do this is to
-repeat our code, but update the attenuation and thickness values to represent a 
+retype our code, but update the attenuation and thickness values to represent a 
 water shield.
 
 <blockquote class="challenge">
