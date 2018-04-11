@@ -46,7 +46,9 @@ the calculation for a shield with one material, lead, with a thickness of 15 cm.
 
 The beginning of this script is a commented section of text describing what the
 script does. Because this code is encased in triple-quoted (`"""`) both above
-and below the text, Python will ignore this section and not treat it as code.
+and below the text, Python will ignore this section and not treat it as
+code. This is a nice way to put mult-line comments into your code instead of
+starting each new line with a `#` symbol.
 
 Next Python's built-in `math` module is imported into the script. Similar to the
 built-in **functions** we discussed in [episode 2](/02-variables), Python comes
@@ -97,8 +99,13 @@ In the code below, a function returning the flux for a shield (a $$\mu$$ and
 $$x$$ value) has been implemented *and documented*. Underneath the line defining
 the `calc_phi` function there is a set of text enclosed with triple-quotes
 (`"""`) which contains information about the purpose of the function along with
-its expected inputs and outputs. This form of documentation is accessible from a
-Python interpreter using the built-in `help` function. 
+its expected inputs and outputs. Triple quotes were used before to create
+multi-line comments at the top of our script, but this comment block is special
+because of its location in the code. Because this comment section appears right
+below the function definition, it acts as documentation and is accessible from a
+Python interpreter using the built-in `help` function. Specifically, executing
+the command `help(calc_phi)` will display this information about the function on
+screen.
 
 Underneath this is the implementation of the function which computes the flux
 value. 
