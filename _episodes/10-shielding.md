@@ -7,7 +7,15 @@ questions:
 keypoints:
 - "Use Python to write a simple shielding calculation script."
 - "Learn some best practices when writing Python."
+objectives:
+- "Produce a Python script from scratch"
+- "Execute Python scripts in a command line"
+- "Selection of appropriate data structures for an application"
+- "Understand the value of using functions"
+- "Learn best practices for function implementation"
+- "Implement for loops to solve a problem"
 ---
+
 ## Shielding Problem 
 
 In this lesson we'll be doing a live coding exercise in which we calculate the
