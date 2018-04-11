@@ -55,7 +55,7 @@ the calculation for a shield with one material, lead, with a thickness of 15 cm.
 The beginning of this script is a commented section of text describing what the
 script does. Because this code is encased in triple-quoted (`"""`) both above
 and below the text, Python will ignore this section and not treat it as
-code. This is a nice way to put mult-line comments into your code instead of
+code. This is a nice way to put multi-line comments into your code instead of
 starting each new line with a `#` symbol.
 
 Next Python's built-in `math` module is imported into the script. Similar to the
@@ -89,7 +89,7 @@ module names for convenience.
 {:.callout}
 
 Next we initialize a few variables: `phi_0`, `mu`, and `x`. These represent the
-initial flux, attenuation coefficient of lead, and the lead shield thicknes
+initial flux, attenuation coefficient of lead, and the lead shield thickness
 respectiely. Finally, we perform the calculation for the uncollided flux
 according to the model above and display the result on screen.
 
@@ -221,11 +221,11 @@ to the `calc_phi` function.
 
 ## A Multi-Material Shield
 
-Our previous work made possible to calculate the flux after pasing through two
+Our previous work made possible to calculate the flux after passing through two
 materials, but what about 5 materials? 10 materials? 
 
 The design of the `calc_phi` function makes this possible with a relatively
-small change to the code. Rather than asuuming a specific number of materials
+small change to the code. Rather than assuming a specific number of materials
 are being passed into the function, we can use a for loop to calculate the flux
 after each material and return the final flux value at the end of the function.
 
@@ -250,7 +250,7 @@ after each material and return the final flux value at the end of the function.
 As demonstrated at the bottom of our code, this function can now be called to
 calculate the uncollided flux at the end of an arbitrary set of shields with
 varying thicknesses. It is also easy to set up different materials for the
-calculation and use them interchangably.
+calculation and use them interchangeably.
 
 [checkpoint0]: https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint0.py
 [checkpoint1]: https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint1.py
