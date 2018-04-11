@@ -27,15 +27,22 @@ where
 To begin, with a simple script which defines these variables and performs
 the calculation for a shield with one material, lead, with a thickness of 15 cm.
 
-
-~~~
-{% include checkpoints/checkpoint0.py %}
-~~~
-
-> ## Getting this script
-> To get the version of the script shown above, use [this link][checkpoint0]
->
-{: .callout}
+<blockquote class="challenge">
+<h2 id="script1"> Checkpoint 0 </h2>
+  <div class="python highlighter-rogue"> 
+    <div class="highlight">
+      <pre class="highlight">
+        <code>
+{% include checkpoints/checkpoint0.py %} 
+        </code>
+      </pre>
+    </div>
+  </div>
+  <p>
+    To get the version of the script shown above, use
+    <a href="https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint0.py"> this link </a>
+  </p>
+</blockquote>
 
 The beginning of this script is a commented section of text describing what the
 script does. Because this code is encased in triple-quoted (`"""`) both above
@@ -62,13 +69,22 @@ shield composed of water. Perhaps the most straightforward way to do this is to
 repeat our code, but update the attenuation and thickness values to represent a 
 water shield.
 
-~~~
-{% include checkpoints/checkpoint1.py %}
-~~~
-> ## Getting this script
-> To get the version of the script shown above, use [this link][checkpoint1]
->
-{: .callout}
+<blockquote class="challenge">
+<h2 id="script1"> Checkpoint 1 </h2>
+  <div class="python highlighter-rogue"> 
+    <div class="highlight">
+      <pre class="highlight">
+        <code>
+{% include checkpoints/checkpoint1.py %} 
+        </code>
+      </pre>
+    </div>
+  </div>
+  <p>
+    To get the version of the script shown above, use
+    <a href="https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint1.py"> this link </a>
+  </p>
+</blockquote>
 
 This is fairly straightforward, but what if we want to perform this computation 
 10 times? 50 times? 10000 times? This small script would become large very quickly.
@@ -87,13 +103,22 @@ Python interpreter using the built-in `help` function.
 Underneath this is the implementation of the function which computes the flux
 value. 
 
-~~~
-{% include checkpoints/checkpoint2.py %}
-~~~
-> ## Getting this script
-> To get the version of the script shown above, use [this link][checkpoint2]
->
-{: .callout}
+<blockquote class="challenge">
+<h2 id="script1"> Checkpoint 2 </h2>
+  <div class="python highlighter-rogue"> 
+    <div class="highlight">
+      <pre class="highlight">
+        <code>
+{% include checkpoints/checkpoint2.py %} 
+        </code>
+      </pre>
+    </div>
+  </div>
+  <p>
+    To get the version of the script shown above, use
+    <a href="https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint2.py"> this link </a>
+  </p>
+</blockquote>
 
 ## Correlating Shield Properties
 
@@ -103,13 +128,22 @@ $$x$$. Rather than separate these values in to different variable, a tuple can
 be used to make sure these two properties will always be associated with each
 other. Our function for this calculation now needs to be updated as well. 
 
-~~~
-{% include checkpoints/checkpoint3.py %}
-~~~
-> ## Getting this script
-> To get the version of the script shown above, use [this link][checkpoint3]
->
-{: .callout}
+<blockquote class="challenge">
+<h2 id="script1"> Checkpoint 3 </h2>
+  <div class="python highlighter-rogue"> 
+    <div class="highlight">
+      <pre class="highlight">
+        <code>
+{% include checkpoints/checkpoint3.py %} 
+        </code>
+      </pre>
+    </div>
+  </div>
+  <p>
+    To get the version of the script shown above, use
+    <a href="https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint3.py"> this link </a>
+  </p>
+</blockquote>
 
 As seen in the updated function documentation, the function `calc_phi` now takes
 in only two arguments - the initial flux `phi_0` and an argument named
@@ -131,13 +165,23 @@ flux value is returned from the function and printed to screen in at the end of
 the script. Note that this multi-material calculation now requires only one call
 to the `calc_phi` function.
 
-~~~
-{% include checkpoints/checkpoint4.py %}
-~~~
-> ## Getting this script
-> To get the version of the script shown above, use [this link][checkpoint4]
->
-{: .callout}
+
+<blockquote class="challenge">
+<h2 id="script1"> Checkpoint 4 </h2>
+  <div class="python highlighter-rogue"> 
+    <div class="highlight">
+      <pre class="highlight">
+        <code>
+{% include checkpoints/checkpoint4.py %} 
+        </code>
+      </pre>
+    </div>
+  </div>
+  <p>
+    To get the version of the script shown above, use
+    <a href="https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint4.py"> this link </a>
+  </p>
+</blockquote>
 
 ## A Multi-Material Shield
 
@@ -149,13 +193,23 @@ small change to the code. Rather than asuuming a specific number of materials
 are being passed into the function, we can use a for loop to calculate the flux
 after each material and return the final flux value at the end of the function.
 
-~~~
-{% include checkpoints/checkpoint5.py %}
-~~~
-> ## Getting this script
-> To get the version of the script shown above, use [this link][checkpoint5]
->
-{: .callout}
+
+<blockquote class="challenge">
+<h2 id="script1"> Checkpoint 5 </h2>
+  <div class="python highlighter-rogue"> 
+    <div class="highlight">
+      <pre class="highlight">
+        <code>
+{% include checkpoints/checkpoint5.py %} 
+        </code>
+      </pre>
+    </div>
+  </div>
+  <p>
+    To get the version of the script shown above, use
+    <a href="https://raw.githubusercontent.com/kkiesling/ans-python-workshop/gh-pages/_includes/checkpoints/checkpoint5.py"> this link </a>
+  </p>
+</blockquote>
 
 As demonstrated at the bottom of our code, this function can now be called to
 calculate the uncollided flux at the end of an arbitrary set of shields with
