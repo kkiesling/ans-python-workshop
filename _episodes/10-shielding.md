@@ -52,12 +52,33 @@ starting each new line with a `#` symbol.
 
 Next Python's built-in `math` module is imported into the script. Similar to the
 built-in **functions** we discussed in [episode 2](/02-variables), Python comes
-with a set of standard modules which add commonly needed cababilities to your
+with a set of standard modules which add commonly needed capabilities to your
 programs. In this case, we'll use the math module to access the exponential
 function (`math.exp`). Notice, though, that when this function is called in
 later lines it is called as `m.exp`. This is because we've imported the `math`
-module **as** `m`. This allows us to refer to the math module using only `m`,
-making it easier to reference when we need it later in the script.
+module **as** `m`. This is known as aliasing and is often used to shorten long
+module names for convenience.
+
+> ## Aliasing
+> Aliasing is used to import a module under a different name, or alias.
+> This is typically used to shorten the name of a module. The module will 
+> behave the the same way under any name. For example:
+> 
+> ~~~
+> import math
+> math.cos(0.0)
+> ~~~
+> {: .python}
+>
+> will yield the same result as
+>
+> ~~~
+> import math as m
+> m.cos(0.0)
+> ~~~
+> {: .python}
+>
+{:.callout}
 
 Next we initialize a few variables: `phi_0`, `mu`, and `x`. These represent the
 initial flux, attenuation coefficient of lead, and the lead shield thicknes
