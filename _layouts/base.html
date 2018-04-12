@@ -12,6 +12,33 @@
     <link rel="stylesheet" type="text/css" href="{{ page.root }}/assets/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="{{ page.root }}/assets/css/bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="{{ page.root }}/assets/css/lesson.css" />
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+      MathJax.Hub.Config({
+      config: ["MMLorHTML.js"],
+      extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+      jax: ["input/TeX"],
+      tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: false
+      },
+          TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                   autoNumber: "AMS",
+                },
+                unicode: {
+                   fonts: "STIXGeneral,'Arial Unicode MS'"
+                }
+      },
+            showProcessingMessages: false
+        });
+</script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
