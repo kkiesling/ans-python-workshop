@@ -10,9 +10,9 @@ keypoints:
 objectives:
 - "Produce a Python script from scratch"
 - "Execute Python scripts in a command line"
-- "Selection of appropriate data structures for an application"
-- "Understand the value of using functions"
-- "Learn best practices for function implementation"
+- "Select appropriate data structures for an application"
+- "Write a function in Python"
+- "Apply best practices when writing a function"
 - "Implement for loops to solve a problem"
 ---
 
