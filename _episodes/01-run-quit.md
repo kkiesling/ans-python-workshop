@@ -15,7 +15,7 @@ keypoints:
 ---
 ## Python programs are plain text files.
 
-*   They have the `.py` extension to let everyone (including the operating system) 
+*   They have the `.py` extension to let everyone (including the operating system)
     know it is a Python program.
     *   This is convention, not a requirement.
 
@@ -23,12 +23,12 @@ keypoints:
 ## Start iPython
 
 
-    ~~~
-    $ ipython 
-    ~~~
-    {: .python}
+~~~
+$ ipython
+~~~
+{: .python}
 
-*   This will start a iPython interpreter. 
+*   This will start a iPython interpreter.
 *   The iPython interpreter provides several advantages over the standard Python interpreter:
     * Tab completion allows you to easily access the names of things you are
       using and learn more about them
@@ -38,14 +38,14 @@ keypoints:
 
 ## The iPython interpreter
 
-   
+
 ## A few simple commands
 
 Upon executing the iPython command, the following prompt will appear at the
 bottom of your screen.
 
 ~~~
-In [1]: 
+In [1]:
 ~~~
 {: .python}
 
